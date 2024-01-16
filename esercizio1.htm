@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>100 volte juve</title>
+
+</head>
+<style>
+
+
+
+
+
+
+</style>
+<body>
+
+
+<button onclick="generaScritte()">SCHIACCIA</button>
+
+<div id="output"></div>
+
+<script>
+
+
+    function generaScritte() {
+
+
+
+        var outputDiv = document.getElementById('output');
+
+
+
+        outputDiv.innerHTML = ''; 
+
+
+
+
+
+
+        for (var i = 1; i <= 100; i++) {
+
+            var nuovaScritta = document.createElement('p');
+
+
+
+            nuovaScritta.textContent = 'juve merda ' + i;
+
+
+
+
+            outputDiv.appendChild(nuovaScritta);
+
+        }
+
+
+
+    }
+
+</script>
+
+
+
+
+</body>
+
+
+
+
+</html>
