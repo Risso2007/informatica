@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <h1>NUMERI PARI E DISPARI STAMPA QUADRATO</h1>
+<head>
+
+    <style>
+        .square {
+            width: 10px;
+            height: 10px;
+            margin: 2px;
+            
+            float: right;
+        }
+        .even {
+            background-color: #f0e9e9;
+        border: 2px solid black;
+        }
+        .odd {
+              background-color: #d1cbcb;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+
+<body>
+       <div id="container"></div> 
+
+    <script>
+    let container = document.getElementById('container'); for (let i = 1; i <= 100; i++) {let square = document.createElement('div');
+      square.classList.add('square');
+      
+        if (i % 2 === 0) { square.classList.add('even');
+      } 
+      
+      else {
+        square.classList.add('odd');
+      }
+      container.appendChild(square);
+
+      if (i % 10 === 0) {container.appendChild(document.createElement('br'));
+      }
+
+
+    }
+    </script>
+
+
+</body>
+
+</html>
