@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 1 verifica </title>
+</head>
+<body>
+    <h1>ESERCIZIO VERIFICA 1: CALCOLA PESO SU PIANETI</h1>
+         <label for="pesoInput">Digita il peso:</label>
+
+    <input type="numero" id="pesoInput">
+
+    <button onclick="calcolaPesoSuTuttiPianeti()">Converti</button> <div id="risultato"></div>
+
+
+             <script>
+        
+                     function calcolaPesoSuTuttiPianeti()
+        
+        {
+            const peso = parseFloat(document.getElementById("pesoInput").value);
+            if (isNaN(peso)) {alert("INSERISCI UN VALORE NUMERICO DA CONVERTIRE.");return;
+            }
+
+      const accelerazioniGravita = [9.81, 0.62, 3.7, 3.71, 24.79, 11.15, 8.69, 10.44, 8.87];
+              const nomiPianeti = ["TERRA", "PLUTTONE", "MERCURIO", "MARTE", "GIOVE", "NETTTUNO", "URANO", "SATURNO", "VENERE"];
+            const gTerra = 9.81;
+
+               const risultatoDiv = document.getElementById("risultato");risultatoDiv.innerHTML = "<h2> Peso su tutti i pianeti:</h2>";
+
+            for (let i = 0; i < nomiPianeti.length; i++) {const pesoSuPianeta = peso * accelerazioniGravita[i] / gTerra;
+risultatoDiv.innerHTML += `<p>${nomiPianeti[i]}: ${pesoSuPianeta.toFixed(2)} kg</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
