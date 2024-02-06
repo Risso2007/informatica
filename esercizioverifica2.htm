@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esercizio 3 Verifica</title>
+  <h1>ESERCIZIO 3 VERIFICA: QUADRATI PICCOLI E GRANDI</h1>
+
+  <style>
+        .quadrato-piccolo {
+       width: 10px;
+      height: 10px;
+       margin: 2px;
+      float: left;
+      text-align: center;
+     
+
+
+     background-color: rgb(207, 206, 206);
+      font-size: 11px; 
+     }
+
+    .quadrato-grande {
+       width: 20px;
+      height: 20px;
+
+     margin: 2px;
+     float: left;
+      text-align: center;
+       
+      background-color: rgb(160, 159, 159);
+  font-size: 14px; 
+          }
+
+   
+          .bordo-nero {
+      border: 1px solid black;
+     }
+  </style>
+
+
+
+</head>
+     <body>
+  <table>
+
+
+    <tbody id="tab"></tbody>
+  </table>
+
+
+  <script>
+     const tabella = document.getElementById('tab');
+
+     
+     for (let i = 1; i <= 100; i++) {const classeQuadrato = i % 2 === 0 ? 'quadrato-grande' : 'quadrato-piccolo';
+
+      const quadrato = `<div class="${classeQuadrato} bordo-nero">${i}</div>`;tab.insertAdjacentHTML('beforeend', quadrato);
+
+      if (i % 10 === 0) {tab.insertAdjacentHTML('beforeend', '<br>');
+      }
+    }
+
+
+  </script>
+  
+</body>
+</html>
