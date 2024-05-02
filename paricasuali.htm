@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .square {
+            width: 75px;
+
+                height: 75px;
+            display: inline-block;
+            text-align: center;
+            margin: 2px;
+             font-size: 17px;
+         line-height: 50px;
+        }
+        .even {
+
+            background-color: rgb(194, 31, 31);
+        }
+        .odd 
+        
+        {
+            background-color: rgb(64, 207, 255);
+        }
+    </style>
+</head>
+<body>
+    <body bgcolor="pink"></body>
+        <div id="container">
+   
+    </div>
+
+    <script>
+   
+             const randomNumbers = Array.from({ length: 100 }, () => Math.floor(Math.random() * 100) + 1);
+
+ 
+ const container = document.getElementById("container");
+
+
+        randomNumbers.forEach((number) => {
+            const square = document.createElement("div");
+
+            square.classList.add("square");
+
+            square.textContent = number;
+
+
+                if (number % 2 === 0) {
+                square.classList.add("even");
+         } else {
+                square.classList.add("odd");
+            }
+
+     container.appendChild(square);
+        }); 
+    </script>
+
+</body>
+</html>
