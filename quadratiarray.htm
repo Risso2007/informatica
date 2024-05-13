@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quadrati colorati con array</title>
+  <h1>QUADRATI COLORATI CON ARRAY E PRIME</h1>
+  <style>
+    #container {
+      display: flex;
+
+         flex-wrap: wrap;
+    }
+    .square {
+      width: 70px;
+      height: 70px;
+      margin: 7px;
+
+
+      display: flex;
+
+         justify-content: center;
+      align-items: center;
+
+      border: 2px solid black;
+    }
+  </style>
+</head>
+
+
+<body> 
+       <div id="container"></div>
+
+
+  <script>
+
+    function isPrime(n) {
+                 let bPrime = true;
+        let fat = 2;
+      while (fat <= n / 2) {
+        if (n % fat === 0) {
+          bPrime = false;
+        }
+        fat++;
+      }
+      return bPrime;
+    }
+
+ 
+    const numeri = Array.from({ length: 1000 }, (_, i) => i + 1000);
+
+    
+    const container = document.getElementById('container');
+
+         for (let i = 0; i < 1000; i++) {
+  
+      
+      
+            const div = document.createElement('div');div.className = 'square'; div.textContent = numeri[i];
+      
+      
+      if (numeri[i] % 2 === 0) {
+
+
+
+        div.style.backgroundColor = 'darkred'; 
+      } else {
+        div.style.backgroundColor = 'lightblue'; 
+         
+      }
+      
+               if (numeri[i] % 7 === 0) {
+        div.style.backgroundColor = 'lightcoral'; 
+      }
+
+      
+      if 
+      (isPrime(numeri[i])) {
+        div.style.backgroundColor = 'yellow'; 
+      }
+      
+    
+      container.appendChild(div);
+
+
+    }
+
+
+       
+       
+       </script>
+</body>
+
+</html>
