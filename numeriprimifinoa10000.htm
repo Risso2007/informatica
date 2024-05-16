@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteggio Numeri Primi fino a 10000</title>
+    <style>
+        body {
+           
+            background-color: #f0f0f0;
+
+            color: #333;
+             padding: 20px;
+
+        }
+        .container {
+
+            max-width: 600px;
+            margin: 0 auto;
+             background-color: #fff;
+               border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           
+          padding: 20px;
+        }
+        .header {
+         text-align: center;
+           
+         margin-bottom: 20px;
+        }
+        .result {
+
+
+            padding: 10px;
+
+             border-bottom: 1px solid #ddd;
+        }
+        .result:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+            <h1 class="header">Conteggio Numeri Primi</h1>
+        <h2 class="header">Rissone Andrea</h2>
+    <div id="output"></div>
+    </div>
+
+    <script>
+        function isPrime(num) {  if (num <= 1) return false;
+            if (num <= 3) return true;
+
+
+            if (num % 2 === 0 || num % 3 === 0) return false;for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+            return true;
+        }
+
+        function countPrimesInRange(start, end) {
+            let count = 0;
+            for (let i = start; i <= end; i++) {
+                if (isPrime(i)) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        const outputDiv = document.getElementById('output');
+        for (let i = 0; i < 10000; i += 100) {
+            const count = countPrimesInRange(i, i + 99);
+            outputDiv.innerHTML += `<div class="result"><strong>Numeri primi tra ${i} e ${i + 99}:</strong> ${count}</div>`;
+        }
+    </script>
+</body>
+</html>
