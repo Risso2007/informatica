@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrati</title>
+    <h1>Rissone Andrea</h1>
+
+    <style>
+
+        .square {
+         
+         
+            width: 30px;
+            height: 30px;
+                background-color: white;
+            border: 2px solid black;
+
+            float: left;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        let n = prompt("Inserisci un numero:");
+
+           let container = document.createElement('div');
+      container.id = 'container';
+
+                document.body.appendChild(container);
+
+
+
+        for (let i = 0; i < n; i++) {  let square = document.createElement('div');
+                square.className = 'square';
+           
+           
+                    container.appendChild(square);
+        }
+    </script>
+
+
+</body>
+</html>
